@@ -1,15 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Spa Menu</title>
-    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
 </head>
 <body>
 <h1>My Super Fancy Spa</h1>
-<div id = "clientProfile">
+<div id="clientProfile">
+    <h2>My profile</h2>
+        <p th:text="${name}">Name</p>
+        <p th:text="${skintype}">Skin Type</p>
+        <th:block th:each="item:${manipedi}">
+            <p th:text="${item}"></p>
+         </th:block>
+
 </div>
-<div id = "servicesMenu">
-</div>
+<div id="servicesMenu">
+    <h2>Menu of Available Services</h2>
+    <p>The facial treatments below are recommended by our esthetics's for your given skin type.</p>
+    <ul>
+        <th:block th:each="item:${appropriateFacials}">
+            <li th:text="${item}"></li>
+        </th:block>
+        <ul>
+        <th:block th:each="item:${manipedi}">
+            <div th:if="${item == ('manicure')}">
+            <nav th:replace="fragments :: manicureDescription">Manicure</nav>
+            </div>
+            <li th:if="${item == ('pedicure')}">
+            <nav th:replace="fragments :: pedicureDescription">Pedicure</nav>
+            </li>
+        </th:block>
+    </ul>
+
+
+
+<footer>
+    <div>
+        <h3>Color of available nail polishes</h3>
+        <button class="redbutton"  type="button" ></button>
+        <button class="hotpinkbutton"  type="button" ></button>
+        <button class="maroonbutton"  type="button" ></button>
+        <button class="fuchsiabutton"  type="button" ></button>
+        <button class="salmonbutton"  type="button" ></button>
+    </div>
+</footer>
 </body>
 </html>
+
+

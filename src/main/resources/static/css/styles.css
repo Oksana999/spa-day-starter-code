@@ -24,3 +24,28 @@ table {
             padding: 10px;
             text-align: center;
 }
+.redbutton {
+    background-color: red;
+    width: 50px;
+    height: 25px;
+}
+.hotpinkbutton {
+    background-color: hotpink;
+    width: 50px;
+    height: 25px;
+}
+.maroonbutton {
+    background-color: maroon;
+    width: 50px;
+    height: 25px;
+}
+.fuchsiabutton {
+    background-color: fuchsia;
+    width: 50px;
+    height: 25px;
+}
+.salmonbutton {
+    background-color: salmon;
+    width: 50px;
+    height: 25px;
+}
