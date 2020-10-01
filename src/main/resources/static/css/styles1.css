@@ -1,0 +1,20 @@
+body {
+    background-color: pink;
+
+}
+h1 {
+    text-align: center;
+}
+span {
+    text-align: center;
+    font-size: 20px;
+}
+.congrats {
+    color: maroon;
+
+}
+.error {
+    color: red;
+    font-size: medium;
+
+}

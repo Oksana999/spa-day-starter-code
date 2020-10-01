@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../static/css/styles1.css" th:href="@{/css/styles1.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="congrats">
+    <h1 th:text="${user.getUsername()}+', welcome to the SPA!'"></h1>
+</div>
+
+    <h2>Users:</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>User add at:</th>
+            <th>User data</th>
+        </tr>
+    </thead>
+    <tr th:each="user:${users}">
+    <td th:text="${user.getUsername()}"></td>
+    <td th:text="${user.getDate()}"></td>
+        <td>
+            <ul>
+                <li>
+                    <form method="get" action="/user/userInfo/">
+                        <input type="hidden" th:value="${user.getId()}">
+                        <a th:href="@{/user/userInfo/{id}(id=${user.id})}">User data</a>
+                    </form>
+                </li>
+
+            </ul>
+        </td>
+
+
+    </tr>
+</table>
+    <ul>
+        <li><a href="/">User service</a></li>
+    </ul>
+</body>
+</html>
